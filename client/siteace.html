@@ -1,0 +1,332 @@
+<head>
+  <title>siteace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	
+</body>
+
+<!--Application Layout -->
+<template name="ApplicationLayout">
+	{{>yield "navbar"}}
+	{{> yield "mainPage"}}
+</template>
+
+<!--Header template -->
+<template name="header">
+	<div class="container">
+		<div class="pad">
+	   		{{> flashMessages}}
+		</div>
+			<div class="jumbotron">
+				{{> website_form}}
+				{{> search_modal}}
+				{{> thank}}
+			<div class="row">
+				<div class="col-md-8">
+					<h2>Hola from SiteAce!!</h2>
+				</div>
+				<div class="col-md-4">
+					<button id="js-add" class="btn btn-success btn-block js-add"><span class="glyphicon glyphicon-globe"></span> Add Wesbite</button>
+				</div>
+				<div class="col-md-4">
+					<br>
+					<button id="js-search" class="btn btn-info btn-block js-search"><span class="glyphicon glyphicon-search"></span> Search Website</button>
+				</div>
+			</div>
+			</div>
+	</div>
+	<div class="container">
+		{{>homePage}}
+	</div>
+</template>
+
+<!--NavBar template -->
+<template name="navbar">
+	<!-- navbar  - you will be putting the login functions here -->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+              <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed"
+                      data-toggle="collapse" data-target="#navbar"
+                      aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand" href="/"><span
+                      class="glyphicon glyphicon-link"></span>SiteAce</a>
+              </div>
+              
+              <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="{{isActive}}"><a href="/"><span class="glyphicon glyphicon-home"
+                         aria-hidden="true"></span> Home</a></li>
+                     <li class="nav navbar-nav">
+           					{{> loginButtons }} 
+        			</li>
+                    <li><a href="https://github.com/raju249" target="_blank"><span class="glyphicon glyphicon-info-sign"></span> 
+                    		About Me</a></li>
+                </ul>
+              </div>
+            </div>
+  </nav>
+</template>
+<!--Home Page template -->
+<template name="homePage">
+	<div class="row">
+		<div class="col-xs-12 col-sm-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4>Recently Added</h4>
+				</div>
+				<div class="panel-body">
+					<ul class="list-group">
+						{{#each websites}}
+							<li class="list-group-item">{{title}}</li>
+						{{/each}}
+					</ul>
+				</div>
+				<div class="panel-footer">
+					<a href="/sites">
+						<button class="btn btn-primary">More &raquo;</button>
+					</a>
+				</div>
+			</div>
+		</div>
+			<div class="col-xs-12 col-sm-6 ">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4>Popular Sites</h4>
+				</div>
+				<div class="panel-body">
+					<ul class="list-group">
+						{{#each popular}}
+							<li class="list-group-item">{{title}}</li>
+						{{/each}}
+					</ul>
+				</div>
+				<div class="panel-footer">
+				<a href="/sites">
+					<button class="btn btn-primary">More &raquo;</button>
+				</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</template>
+<!--Template for search -->
+<template name="search_modal">
+	<div class="modal fade" id="search" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" 
+                	 data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                	</button>
+                <h4 class="modal-title" id="myModalLabel">
+                   <span class="glyphicon glyphicon-search"></span> Search
+                </h4>
+				</div>
+				<div class="modal-body">
+					<form role="form">
+	                  	<div class="form-group">
+		                    <label for="exampleInputEmail1">Website url</label>
+		                      <input type="email" class="form-control"
+		                      id="Inputurl" required placeholder="http://www.example.com"/>
+	                  	</div>
+                  	</form>
+				</div>
+				<div class="modal-footer">
+	                <button type="button" class="btn btn-default"
+	                        data-dismiss="modal">
+	                            Close
+	                </button>
+	                <button type="button" class="btn btn-success">
+	                    <span class="glyphicon glyphicon-search"></span> Search
+	                </button>
+            	</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<!--Template thet adds websites -->
+<template name="website_form">
+<!-- Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                   Add new Website
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body site">
+                
+                <form role="form" class="js-addSite">
+                  <div class="form-group">
+                    <label for="url">Website url</label>
+                      <input type="url" class="form-control"
+                      id="url" required placeholder="http://www.example.com"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="title">Title</label>
+                      <input type="text" class="form-control"
+                          id="title" required placeholder="My Site"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                      <input type="text" class="form-control"
+                          id="description" required placeholder="Its is developed for.."/>
+                  </div>
+                   <button  type="submit" class="btn btn-success">
+                        Add 
+                    </button>
+                </form>
+                
+                
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                      id="close"  data-dismiss="modal">
+                            Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</template>
+
+<!-- template that displays several website items -->
+<template name="website_list">
+	<div class="container pad">
+		{{> flashMessages}}
+		<div class="jumbotron">
+			<h2>List of Websites</h2>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-2">
+				<button class="btn btn-success btn-block js-add">
+					<span class="glyphicon glyphicon-globe"></span>
+					Add Site
+				</button>
+			</div>
+			<div class="col-xs-12 col-sm-10">
+				<ol class="breadcrumb">
+				  <li><a href="/">Home</a></li>
+				  <li class="active">Sites</li>
+				</ol>
+			</div>
+		</div>
+	   <div class="row">
+	   		{{> website_form}}
+			{{> thank}}
+        	{{#each websites}}
+        	{{>website_item}}
+        	{{/each}}
+        </div>
+    </div>
+</template>
+
+<!-- template that displays individual website entries -->
+<template name="website_item">
+
+		<div class="col-md-4">
+		    <div class="panel panel-default">
+		        <div class="panel-heading">
+		            <a href="/site/{{_id}}">{{title}}</a>
+		        </div>
+		        <div class="panel-body">
+		            <p>
+		                {{description}}
+	               </p>
+	               <p>
+	                   Created On: {{createdOn}}
+	               </p>
+		        </div>
+		        <div class="panel-footer">
+		            <div class="btn-group btn-group-justified">
+		                <a href="{{url}}" target="_blank" class="btn btn-info"><span class="glyphicon glyphicon-link"></span>
+		                Visit</a>
+		                <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span>
+		                Up</a>
+		                <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-down"></span>
+		                Down</a>
+		            </div>
+		        </div>
+		    </div>
+		    
+		</div>
+</template>
+
+<template name="thank">
+    <div class="modal fade" id="thank" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" 
+                	 data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                	</button>
+                <h4>Submission successful</h4>
+				</div>
+				<div class="modal-body">
+					<h3>Thank You for website.</h3>
+					<p>Your site is submitted.</p>
+				</div>
+				<div class="modal-footer">
+	                <button type="button" class="btn btn-default"
+	                        data-dismiss="modal">
+	                            Close
+	                </button>
+            	</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<!--Site details Template -->
+<template name="siteDetail">
+	<div class="container pad">
+		<div class="jumbotron">
+			<div class="row">
+				<div class="col-xs-12 col-sm-8">
+					<h2>{{title}}</h2>
+					<p>{{description}}</p>
+				</div>
+				<div class="col-xs-12 col-sm-4">
+					<a href="{{url}}" target="_blank"><button class="btn btn-block btn-info"><span class="glyphicon glyphicon-link"></span>
+					Visit Site</button></a>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-12">
+				<ol class="breadcrumb">
+				  <li><a href="/">Home</a></li>
+				  <li><a href="/sites">Sites</a></li>
+				  <li class="active">{{title}}</li>
+				</ol>
+		</div>
+	</div>
+</template>
