@@ -2,7 +2,7 @@
 /*global Router*/
 Template.website_list.helpers({
 		websites:function(){
-			return Websites.find({});
+			return Websites.find({},{sort : {votesUp : -1} });
 		}
 	});
 	
@@ -12,7 +12,7 @@ Template.homePage.helpers({
 			return Websites.find({},{limit:5,sort:{createdOn:-1}});
 		},
 		popular:function(){
-		    return "";
+		    return Websites.find({},{limit : 5,sort: {votesUp : { $gt : 2}} });
 		}
 	});
 

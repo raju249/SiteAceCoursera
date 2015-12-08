@@ -14,35 +14,111 @@ Template.website_list.events({
 		}
 	});
 	
-Template.website_item.events({
-		"click .js-upvote":function(event){
-			// example of how you can access the id for the website in the database
+Template.siteDetail.events({
+    "click .js-upvote":function(event){
+        // example of how you can access the id for the website in the database
 			// (this is the data context for the template)
 			var website_id = this._id;
-			console.log("Up voting website with id "+website_id);
 			// put the code in here to add a vote to a website!
 			if(Meteor.user()){
-				console.log(Meteor.user())
-			}else{
-				FlashMessages.sendError("You must be logged in mate !!!");
-			}
-			return false;// prevent the button from reloading the page
-		}, 
-		"click .js-downvote":function(event){
+		  var websiteId = this._id;
+		console.log(websiteId)
+		  var vote = {
+		    number : 1,
+		    website : websiteId,
+	      	createdOn : new Date(),
+	      	createdBy : Meteor.user()._id
+		  };
+		  
+		  if(!Votes.findOne({createdBy:vote.createdBy, website:vote.website, number:vote.number})){
+	      	if(Votes.insert(vote)){
+	        	//update votes     
+          		Websites.update(vote.website, { $inc : {votesUp : 1 } });
+        	}
+	      }else{
+	        FlashMessages.sendWarning("You just voted that site before.");
+	      }
+	    }else{
+	      FlashMessages.sendError("Sign in to do this.");
+	    }
+		return false;// prevent the button from reloading the page
+    },
+    "click .js-downvote":function(event){
+        if(Meteor.user()){
+                var websiteId = this._id;
+		
+                  var vote = {
+            		    number : -1,
+            		    website : websiteId,
+            	      createdOn : new Date(),
+            	      createdBy : Meteor.user()._id
+            		  };		
 
+		  if(!Votes.findOne({createdBy:vote.createdBy, website:vote.website, number:vote.number})){
+    	      if(Votes.insert(vote)){
+                  Websites.update(vote.website, { $inc : {votesDown : -1 } });
+    	      }
+          }else{
+                    FlashMessages.sendWarning("You just voted that site before.");
+          }
+        }else{
+                FlashMessages.sendError("Sign in to do this.");
+            }
+		    return false;// prevent the button from reloading the page
+    }
+})
+Template.website_item.events({
+		"click .upvote":function(event){
 			// example of how you can access the id for the website in the database
 			// (this is the data context for the template)
 			var website_id = this._id;
-			console.log("Down voting website with id "+website_id);
-			
+			// put the code in here to add a vote to a website!
 			if(Meteor.user()){
-				console.log(Meteor.user());
-			}
-			else{
-				FlashMessages.sendError("Please Login!!")
-			}
-			
-			return false;// prevent the button from reloading the page
+		  var websiteId = this._id;
+		
+		  var vote = {
+		    number : 1,
+		    website : websiteId,
+	      	createdOn : new Date(),
+	      	createdBy : Meteor.user()._id
+		  };
+		  
+		  if(!Votes.findOne({createdBy:vote.createdBy, website:vote.website, number:vote.number})){
+	      	if(Votes.insert(vote)){
+	        	//update votes     
+          		Websites.update(vote.website, { $inc : {votesUp : 1 } });
+        	}
+	      }else{
+	        FlashMessages.sendWarning("You just voted that site before.");
+	      }
+	    }else{
+	      FlashMessages.sendError("Sign in to do this.");
+	    }
+		return false;// prevent the button from reloading the page
+		}, 
+		"click .downvote":function(event){
+
+			if(Meteor.user()){
+                var websiteId = this._id;
+		
+                  var vote = {
+            		    number : -1,
+            		    website : websiteId,
+            	      createdOn : new Date(),
+            	      createdBy : Meteor.user()._id
+            		  };		
+
+		  if(!Votes.findOne({createdBy:vote.createdBy, website:vote.website, number:vote.number})){
+    	      if(Votes.insert(vote)){
+                  Websites.update(vote.website, { $inc : {votesDown : -1 } });
+    	      }
+          }else{
+                    FlashMessages.sendWarning("You just voted that site before.");
+          }
+        }else{
+                FlashMessages.sendError("Sign in to do this.");
+            }
+		    return false;// prevent the button from reloading the page
 		}
 	});
 	

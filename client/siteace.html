@@ -267,10 +267,10 @@
 		            <div class="btn-group btn-group-justified">
 		                <a href="{{url}}" target="_blank" class="btn btn-info"><span class="glyphicon glyphicon-link"></span>
 		                Visit</a>
-		                <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span>
-		                Up</a>
-		                <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-down"></span>
-		                Down</a>
+		                <a href="#" class="btn btn-success upvote"><span class="glyphicon glyphicon-thumbs-up"></span>
+		                 +{{votesUp}} Up</a>
+		                <a href="#" class="btn btn-danger downvote"><span class="glyphicon glyphicon-thumbs-down"></span>
+		               {{votesDown}} Down</a>
 		            </div>
 		        </div>
 		    </div>
@@ -309,6 +309,7 @@
 <!--Site details Template -->
 <template name="siteDetail">
 	<div class="container pad">
+		{{> flashMessages}}
 		<div class="jumbotron">
 			<div class="row">
 				<div class="col-xs-12 col-sm-8">
@@ -333,10 +334,10 @@
 				<p class="detail">Created On: {{createdOn}}</p>
 			</div>
 			<div class="col-xs-12 col-sm-6">
-				<a href="#" class="btn btn-success btn-block"><span class="glyphicon glyphicon-thumbs-up"></span>
-		                UpVote</a>
-		        <a href="#" class="btn btn-danger btn-block"><span class="glyphicon glyphicon-thumbs-down"></span>
-		        	     DownVote</a>
+				<a href="#" class="btn btn-success btn-block js-upvote"><span class="glyphicon glyphicon-thumbs-up "></span>
+		               +{{votesUp}} UpVote</a>
+		        <a href="#" class="btn btn-danger btn-block js-downvote"><span class="glyphicon glyphicon-thumbs-down"></span>
+		        	    {{votesDown}} DownVote</a>
 			</div>
 		</div>
 		<div class="row">
