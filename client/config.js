@@ -1,5 +1,5 @@
 /* global FlashMessages*/
-/*global Router*/
+/*global Comments*/
 
 	FlashMessages.configure({
     autoHide: true,
@@ -26,3 +26,6 @@
     }]});
 	
 
+Comments.ui.config({
+   template: 'bootstrap'
+});

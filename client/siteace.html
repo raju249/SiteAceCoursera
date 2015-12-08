@@ -321,12 +321,28 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-xs-12 col-sm-12">
-				<ol class="breadcrumb">
-				  <li><a href="/">Home</a></li>
-				  <li><a href="/sites">Sites</a></li>
-				  <li class="active">{{title}}</li>
-				</ol>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+					<ol class="breadcrumb">
+					  <li><a href="/">Home</a></li>
+					  <li><a href="/sites">Sites</a></li>
+					  <li class="active">{{title}}</li>
+					</ol>
+			</div>
+			<div class="col-xs-12 col-sm-6">
+				<p class="detail">Created On: {{createdOn}}</p>
+			</div>
+			<div class="col-xs-12 col-sm-6">
+				<a href="#" class="btn btn-success btn-block"><span class="glyphicon glyphicon-thumbs-up"></span>
+		                UpVote</a>
+		        <a href="#" class="btn btn-danger btn-block"><span class="glyphicon glyphicon-thumbs-down"></span>
+		        	     DownVote</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				{{> commentsBox id=_id}}
+			</div>
 		</div>
 	</div>
 </template>
