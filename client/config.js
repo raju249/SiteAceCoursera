@@ -31,6 +31,10 @@ Comments.ui.config({
    template: 'bootstrap'
 });
 
-
+// Suscribe
+Meteor.subscribe("websites");
+Meteor.subscribe("comments");
+Meteor.subscribe("recommendations");
+Meteor.subscribe("votes");
 
 
