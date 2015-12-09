@@ -1,0 +1,785 @@
+{
+  "format": "javascript-image-pre1",
+  "arch": "os.linux.x86_64",
+  "load": [
+    {
+      "node_modules": "npm/es5-shim/node_modules",
+      "sourceMap": "packages/es5-shim.js.map",
+      "path": "packages/es5-shim.js"
+    },
+    {
+      "sourceMap": "packages/underscore.js.map",
+      "path": "packages/underscore.js"
+    },
+    {
+      "node_modules": "npm/meteor/node_modules",
+      "sourceMap": "packages/meteor.js.map",
+      "path": "packages/meteor.js"
+    },
+    {
+      "sourceMap": "packages/meteor-base.js.map",
+      "path": "packages/meteor-base.js"
+    },
+    {
+      "sourceMap": "packages/mobile-experience.js.map",
+      "path": "packages/mobile-experience.js"
+    },
+    {
+      "node_modules": "npm/npm-mongo/node_modules",
+      "sourceMap": "packages/npm-mongo.js.map",
+      "path": "packages/npm-mongo.js"
+    },
+    {
+      "sourceMap": "packages/base64.js.map",
+      "path": "packages/base64.js"
+    },
+    {
+      "sourceMap": "packages/ejson.js.map",
+      "path": "packages/ejson.js"
+    },
+    {
+      "sourceMap": "packages/check.js.map",
+      "path": "packages/check.js"
+    },
+    {
+      "node_modules": "npm/babel-compiler/node_modules",
+      "sourceMap": "packages/babel-compiler.js.map",
+      "path": "packages/babel-compiler.js"
+    },
+    {
+      "sourceMap": "packages/ecmascript.js.map",
+      "path": "packages/ecmascript.js"
+    },
+    {
+      "sourceMap": "packages/babel-runtime.js.map",
+      "path": "packages/babel-runtime.js"
+    },
+    {
+      "node_modules": "npm/ecmascript-runtime/node_modules",
+      "sourceMap": "packages/ecmascript-runtime.js.map",
+      "path": "packages/ecmascript-runtime.js"
+    },
+    {
+      "node_modules": "npm/promise/node_modules",
+      "sourceMap": "packages/promise.js.map",
+      "path": "packages/promise.js"
+    },
+    {
+      "sourceMap": "packages/random.js.map",
+      "path": "packages/random.js"
+    },
+    {
+      "sourceMap": "packages/id-map.js.map",
+      "path": "packages/id-map.js"
+    },
+    {
+      "sourceMap": "packages/ordered-dict.js.map",
+      "path": "packages/ordered-dict.js"
+    },
+    {
+      "sourceMap": "packages/tracker.js.map",
+      "path": "packages/tracker.js"
+    },
+    {
+      "sourceMap": "packages/mongo-id.js.map",
+      "path": "packages/mongo-id.js"
+    },
+    {
+      "sourceMap": "packages/diff-sequence.js.map",
+      "path": "packages/diff-sequence.js"
+    },
+    {
+      "sourceMap": "packages/geojson-utils.js.map",
+      "path": "packages/geojson-utils.js"
+    },
+    {
+      "sourceMap": "packages/minimongo.js.map",
+      "path": "packages/minimongo.js"
+    },
+    {
+      "sourceMap": "packages/retry.js.map",
+      "path": "packages/retry.js"
+    },
+    {
+      "sourceMap": "packages/ddp-common.js.map",
+      "path": "packages/ddp-common.js"
+    },
+    {
+      "node_modules": "npm/ddp-client/node_modules",
+      "sourceMap": "packages/ddp-client.js.map",
+      "path": "packages/ddp-client.js"
+    },
+    {
+      "sourceMap": "packages/rate-limit.js.map",
+      "path": "packages/rate-limit.js"
+    },
+    {
+      "sourceMap": "packages/ddp-rate-limiter.js.map",
+      "path": "packages/ddp-rate-limiter.js"
+    },
+    {
+      "node_modules": "npm/logging/node_modules",
+      "sourceMap": "packages/logging.js.map",
+      "path": "packages/logging.js"
+    },
+    {
+      "sourceMap": "packages/routepolicy.js.map",
+      "path": "packages/routepolicy.js"
+    },
+    {
+      "sourceMap": "packages/deps.js.map",
+      "path": "packages/deps.js"
+    },
+    {
+      "sourceMap": "packages/htmljs.js.map",
+      "path": "packages/htmljs.js"
+    },
+    {
+      "sourceMap": "packages/html-tools.js.map",
+      "path": "packages/html-tools.js"
+    },
+    {
+      "sourceMap": "packages/blaze-tools.js.map",
+      "path": "packages/blaze-tools.js"
+    },
+    {
+      "sourceMap": "packages/spacebars-compiler.js.map",
+      "path": "packages/spacebars-compiler.js"
+    },
+    {
+      "sourceMap": "packages/jquery.js.map",
+      "path": "packages/jquery.js"
+    },
+    {
+      "sourceMap": "packages/observe-sequence.js.map",
+      "path": "packages/observe-sequence.js"
+    },
+    {
+      "sourceMap": "packages/reactive-var.js.map",
+      "path": "packages/reactive-var.js"
+    },
+    {
+      "sourceMap": "packages/blaze.js.map",
+      "path": "packages/blaze.js"
+    },
+    {
+      "sourceMap": "packages/spacebars.js.map",
+      "path": "packages/spacebars.js"
+    },
+    {
+      "sourceMap": "packages/ui.js.map",
+      "path": "packages/ui.js"
+    },
+    {
+      "sourceMap": "packages/boilerplate-generator.js.map",
+      "path": "packages/boilerplate-generator.js",
+      "assets": {
+        "boilerplate_web.browser.html": "assets/packages/boilerplate-generator/boilerplate_web.browser.html",
+        "boilerplate_web.cordova.html": "assets/packages/boilerplate-generator/boilerplate_web.cordova.html"
+      }
+    },
+    {
+      "sourceMap": "packages/webapp-hashing.js.map",
+      "path": "packages/webapp-hashing.js"
+    },
+    {
+      "node_modules": "npm/webapp/node_modules",
+      "sourceMap": "packages/webapp.js.map",
+      "path": "packages/webapp.js"
+    },
+    {
+      "sourceMap": "packages/autopublish.js.map",
+      "path": "packages/autopublish.js"
+    },
+    {
+      "sourceMap": "packages/callback-hook.js.map",
+      "path": "packages/callback-hook.js"
+    },
+    {
+      "node_modules": "npm/ddp-server/node_modules",
+      "sourceMap": "packages/ddp-server.js.map",
+      "path": "packages/ddp-server.js"
+    },
+    {
+      "sourceMap": "packages/ddp.js.map",
+      "path": "packages/ddp.js"
+    },
+    {
+      "sourceMap": "packages/binary-heap.js.map",
+      "path": "packages/binary-heap.js"
+    },
+    {
+      "sourceMap": "packages/insecure.js.map",
+      "path": "packages/insecure.js"
+    },
+    {
+      "node_modules": "npm/mongo/node_modules",
+      "sourceMap": "packages/mongo.js.map",
+      "path": "packages/mongo.js"
+    },
+    {
+      "sourceMap": "packages/blaze-html-templates.js.map",
+      "path": "packages/blaze-html-templates.js"
+    },
+    {
+      "sourceMap": "packages/session.js.map",
+      "path": "packages/session.js"
+    },
+    {
+      "sourceMap": "packages/standard-minifiers.js.map",
+      "path": "packages/standard-minifiers.js"
+    },
+    {
+      "sourceMap": "packages/twbs_bootstrap.js.map",
+      "path": "packages/twbs_bootstrap.js"
+    },
+    {
+      "sourceMap": "packages/mrt_flash-messages.js.map",
+      "path": "packages/mrt_flash-messages.js"
+    },
+    {
+      "sourceMap": "packages/url.js.map",
+      "path": "packages/url.js"
+    },
+    {
+      "node_modules": "npm/http/node_modules",
+      "sourceMap": "packages/http.js.map",
+      "path": "packages/http.js"
+    },
+    {
+      "node_modules": "npm/npm-bcrypt/node_modules",
+      "sourceMap": "packages/npm-bcrypt.js.map",
+      "path": "packages/npm-bcrypt.js"
+    },
+    {
+      "sourceMap": "packages/accounts-base.js.map",
+      "path": "packages/accounts-base.js"
+    },
+    {
+      "sourceMap": "packages/sha.js.map",
+      "path": "packages/sha.js"
+    },
+    {
+      "sourceMap": "packages/srp.js.map",
+      "path": "packages/srp.js"
+    },
+    {
+      "node_modules": "npm/email/node_modules",
+      "sourceMap": "packages/email.js.map",
+      "path": "packages/email.js"
+    },
+    {
+      "sourceMap": "packages/accounts-password.js.map",
+      "path": "packages/accounts-password.js"
+    },
+    {
+      "sourceMap": "packages/ian_accounts-ui-bootstrap-3.js.map",
+      "path": "packages/ian_accounts-ui-bootstrap-3.js"
+    },
+    {
+      "sourceMap": "packages/templating.js.map",
+      "path": "packages/templating.js"
+    },
+    {
+      "sourceMap": "packages/iron_core.js.map",
+      "path": "packages/iron_core.js"
+    },
+    {
+      "sourceMap": "packages/iron_dynamic-template.js.map",
+      "path": "packages/iron_dynamic-template.js"
+    },
+    {
+      "sourceMap": "packages/iron_layout.js.map",
+      "path": "packages/iron_layout.js"
+    },
+    {
+      "sourceMap": "packages/iron_url.js.map",
+      "path": "packages/iron_url.js"
+    },
+    {
+      "sourceMap": "packages/iron_middleware-stack.js.map",
+      "path": "packages/iron_middleware-stack.js"
+    },
+    {
+      "sourceMap": "packages/iron_location.js.map",
+      "path": "packages/iron_location.js"
+    },
+    {
+      "sourceMap": "packages/reactive-dict.js.map",
+      "path": "packages/reactive-dict.js"
+    },
+    {
+      "sourceMap": "packages/iron_controller.js.map",
+      "path": "packages/iron_controller.js"
+    },
+    {
+      "node_modules": "npm/iron_router/node_modules",
+      "sourceMap": "packages/iron_router.js.map",
+      "path": "packages/iron_router.js"
+    },
+    {
+      "sourceMap": "packages/mongo-livedata.js.map",
+      "path": "packages/mongo-livedata.js"
+    },
+    {
+      "sourceMap": "packages/less.js.map",
+      "path": "packages/less.js"
+    },
+    {
+      "node_modules": "npm/aldeed_simple-schema/node_modules",
+      "sourceMap": "packages/aldeed_simple-schema.js.map",
+      "path": "packages/aldeed_simple-schema.js"
+    },
+    {
+      "sourceMap": "packages/aldeed_collection2.js.map",
+      "path": "packages/aldeed_collection2.js"
+    },
+    {
+      "sourceMap": "packages/dburles_collection-helpers.js.map",
+      "path": "packages/dburles_collection-helpers.js"
+    },
+    {
+      "sourceMap": "packages/momentjs_moment.js.map",
+      "path": "packages/momentjs_moment.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-af.js.map",
+      "path": "packages/rzymek_moment-locale-af.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-ar.js.map",
+      "path": "packages/rzymek_moment-locale-ar.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-ar-ma.js.map",
+      "path": "packages/rzymek_moment-locale-ar-ma.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-ar-sa.js.map",
+      "path": "packages/rzymek_moment-locale-ar-sa.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-az.js.map",
+      "path": "packages/rzymek_moment-locale-az.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-be.js.map",
+      "path": "packages/rzymek_moment-locale-be.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-bg.js.map",
+      "path": "packages/rzymek_moment-locale-bg.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-bn.js.map",
+      "path": "packages/rzymek_moment-locale-bn.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-bo.js.map",
+      "path": "packages/rzymek_moment-locale-bo.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-br.js.map",
+      "path": "packages/rzymek_moment-locale-br.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-bs.js.map",
+      "path": "packages/rzymek_moment-locale-bs.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-ca.js.map",
+      "path": "packages/rzymek_moment-locale-ca.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-cs.js.map",
+      "path": "packages/rzymek_moment-locale-cs.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-cv.js.map",
+      "path": "packages/rzymek_moment-locale-cv.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-cy.js.map",
+      "path": "packages/rzymek_moment-locale-cy.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-da.js.map",
+      "path": "packages/rzymek_moment-locale-da.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-de.js.map",
+      "path": "packages/rzymek_moment-locale-de.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-de-at.js.map",
+      "path": "packages/rzymek_moment-locale-de-at.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-el.js.map",
+      "path": "packages/rzymek_moment-locale-el.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-en-au.js.map",
+      "path": "packages/rzymek_moment-locale-en-au.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-en-ca.js.map",
+      "path": "packages/rzymek_moment-locale-en-ca.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-en-gb.js.map",
+      "path": "packages/rzymek_moment-locale-en-gb.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-eo.js.map",
+      "path": "packages/rzymek_moment-locale-eo.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-es.js.map",
+      "path": "packages/rzymek_moment-locale-es.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-et.js.map",
+      "path": "packages/rzymek_moment-locale-et.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-eu.js.map",
+      "path": "packages/rzymek_moment-locale-eu.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-fa.js.map",
+      "path": "packages/rzymek_moment-locale-fa.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-fi.js.map",
+      "path": "packages/rzymek_moment-locale-fi.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-fo.js.map",
+      "path": "packages/rzymek_moment-locale-fo.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-fr.js.map",
+      "path": "packages/rzymek_moment-locale-fr.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-fr-ca.js.map",
+      "path": "packages/rzymek_moment-locale-fr-ca.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-gl.js.map",
+      "path": "packages/rzymek_moment-locale-gl.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-he.js.map",
+      "path": "packages/rzymek_moment-locale-he.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-hi.js.map",
+      "path": "packages/rzymek_moment-locale-hi.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-hr.js.map",
+      "path": "packages/rzymek_moment-locale-hr.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-hu.js.map",
+      "path": "packages/rzymek_moment-locale-hu.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-hy-am.js.map",
+      "path": "packages/rzymek_moment-locale-hy-am.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-id.js.map",
+      "path": "packages/rzymek_moment-locale-id.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-is.js.map",
+      "path": "packages/rzymek_moment-locale-is.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-it.js.map",
+      "path": "packages/rzymek_moment-locale-it.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-ja.js.map",
+      "path": "packages/rzymek_moment-locale-ja.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-ka.js.map",
+      "path": "packages/rzymek_moment-locale-ka.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-km.js.map",
+      "path": "packages/rzymek_moment-locale-km.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-ko.js.map",
+      "path": "packages/rzymek_moment-locale-ko.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-lb.js.map",
+      "path": "packages/rzymek_moment-locale-lb.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-lt.js.map",
+      "path": "packages/rzymek_moment-locale-lt.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-lv.js.map",
+      "path": "packages/rzymek_moment-locale-lv.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-mk.js.map",
+      "path": "packages/rzymek_moment-locale-mk.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-ml.js.map",
+      "path": "packages/rzymek_moment-locale-ml.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-mr.js.map",
+      "path": "packages/rzymek_moment-locale-mr.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-ms-my.js.map",
+      "path": "packages/rzymek_moment-locale-ms-my.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-my.js.map",
+      "path": "packages/rzymek_moment-locale-my.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-nb.js.map",
+      "path": "packages/rzymek_moment-locale-nb.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-ne.js.map",
+      "path": "packages/rzymek_moment-locale-ne.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-nl.js.map",
+      "path": "packages/rzymek_moment-locale-nl.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-nn.js.map",
+      "path": "packages/rzymek_moment-locale-nn.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-pl.js.map",
+      "path": "packages/rzymek_moment-locale-pl.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-pt.js.map",
+      "path": "packages/rzymek_moment-locale-pt.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-pt-br.js.map",
+      "path": "packages/rzymek_moment-locale-pt-br.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-ro.js.map",
+      "path": "packages/rzymek_moment-locale-ro.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-ru.js.map",
+      "path": "packages/rzymek_moment-locale-ru.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-sk.js.map",
+      "path": "packages/rzymek_moment-locale-sk.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-sl.js.map",
+      "path": "packages/rzymek_moment-locale-sl.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-sq.js.map",
+      "path": "packages/rzymek_moment-locale-sq.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-sr.js.map",
+      "path": "packages/rzymek_moment-locale-sr.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-sr-cyrl.js.map",
+      "path": "packages/rzymek_moment-locale-sr-cyrl.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-sv.js.map",
+      "path": "packages/rzymek_moment-locale-sv.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-ta.js.map",
+      "path": "packages/rzymek_moment-locale-ta.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-th.js.map",
+      "path": "packages/rzymek_moment-locale-th.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-tl-ph.js.map",
+      "path": "packages/rzymek_moment-locale-tl-ph.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-tr.js.map",
+      "path": "packages/rzymek_moment-locale-tr.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-tzm.js.map",
+      "path": "packages/rzymek_moment-locale-tzm.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-tzm-latn.js.map",
+      "path": "packages/rzymek_moment-locale-tzm-latn.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-uk.js.map",
+      "path": "packages/rzymek_moment-locale-uk.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-uz.js.map",
+      "path": "packages/rzymek_moment-locale-uz.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-vi.js.map",
+      "path": "packages/rzymek_moment-locale-vi.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-zh-cn.js.map",
+      "path": "packages/rzymek_moment-locale-zh-cn.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locale-zh-tw.js.map",
+      "path": "packages/rzymek_moment-locale-zh-tw.js"
+    },
+    {
+      "sourceMap": "packages/rzymek_moment-locales.js.map",
+      "path": "packages/rzymek_moment-locales.js"
+    },
+    {
+      "sourceMap": "packages/jparker_crypto-core.js.map",
+      "path": "packages/jparker_crypto-core.js"
+    },
+    {
+      "sourceMap": "packages/jparker_crypto-md5.js.map",
+      "path": "packages/jparker_crypto-md5.js"
+    },
+    {
+      "sourceMap": "packages/jparker_gravatar.js.map",
+      "path": "packages/jparker_gravatar.js"
+    },
+    {
+      "node_modules": "npm/meteorhacks_inject-initial/node_modules",
+      "sourceMap": "packages/meteorhacks_inject-initial.js.map",
+      "path": "packages/meteorhacks_inject-initial.js"
+    },
+    {
+      "sourceMap": "packages/utilities_avatar.js.map",
+      "path": "packages/utilities_avatar.js",
+      "assets": {
+        "default.png": "assets/packages/utilities_avatar/default.png"
+      }
+    },
+    {
+      "sourceMap": "packages/reywood_publish-composite.js.map",
+      "path": "packages/reywood_publish-composite.js"
+    },
+    {
+      "sourceMap": "packages/aldeed_template-extension.js.map",
+      "path": "packages/aldeed_template-extension.js"
+    },
+    {
+      "sourceMap": "packages/arkham_comments-ui.js.map",
+      "path": "packages/arkham_comments-ui.js"
+    },
+    {
+      "sourceMap": "packages/easysearch_core.js.map",
+      "path": "packages/easysearch_core.js"
+    },
+    {
+      "sourceMap": "packages/coffeescript.js.map",
+      "path": "packages/coffeescript.js"
+    },
+    {
+      "sourceMap": "packages/peerlibrary_assert.js.map",
+      "path": "packages/peerlibrary_assert.js"
+    },
+    {
+      "sourceMap": "packages/peerlibrary_base-component.js.map",
+      "path": "packages/peerlibrary_base-component.js"
+    },
+    {
+      "sourceMap": "packages/peerlibrary_blaze-components.js.map",
+      "path": "packages/peerlibrary_blaze-components.js"
+    },
+    {
+      "sourceMap": "packages/easysearch_components.js.map",
+      "path": "packages/easysearch_components.js"
+    },
+    {
+      "sourceMap": "packages/easy_search.js.map",
+      "path": "packages/easy_search.js"
+    },
+    {
+      "sourceMap": "packages/livedata.js.map",
+      "path": "packages/livedata.js"
+    },
+    {
+      "sourceMap": "packages/hot-code-push.js.map",
+      "path": "packages/hot-code-push.js"
+    },
+    {
+      "sourceMap": "packages/launch-screen.js.map",
+      "path": "packages/launch-screen.js"
+    },
+    {
+      "sourceMap": "packages/autoupdate.js.map",
+      "path": "packages/autoupdate.js"
+    },
+    {
+      "sourceMap": "packages/reload.js.map",
+      "path": "packages/reload.js"
+    },
+    {
+      "path": "packages/global-imports.js"
+    },
+    {
+      "sourceMap": "app/rajendra/lib/collection.js.map",
+      "path": "app/rajendra/lib/collection.js"
+    },
+    {
+      "sourceMap": "app/lib/collection.js.map",
+      "path": "app/lib/collection.js"
+    },
+    {
+      "sourceMap": "app/rajendra/server/startup.js.map",
+      "path": "app/rajendra/server/startup.js"
+    },
+    {
+      "sourceMap": "app/rajendra/meteorshim.js.map",
+      "path": "app/rajendra/meteorshim.js"
+    },
+    {
+      "sourceMap": "app/server/startup.js.map",
+      "path": "app/server/startup.js"
+    },
+    {
+      "sourceMap": "app/meteorshim.js.map",
+      "path": "app/meteorshim.js"
+    },
+    {
+      "sourceMap": "app/rajendra/server/main.js.map",
+      "path": "app/rajendra/server/main.js"
+    },
+    {
+      "sourceMap": "app/server/main.js.map",
+      "path": "app/server/main.js"
+    },
+    {
+      "sourceMap": "packages/service-configuration.js.map",
+      "path": "packages/service-configuration.js"
+    }
+  ]
+}
