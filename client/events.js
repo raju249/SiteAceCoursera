@@ -157,8 +157,6 @@ Template.header.events({
 				FlashMessages.sendError("Please login!!");
 			}
 			
-		},
-		"click .js-search":function(){
-			$("#search").modal("show");
 		}
 	});
+	

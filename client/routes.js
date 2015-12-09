@@ -32,4 +32,17 @@
                 return  Websites.findOne({_id:this.params.id});
             }
         });
-    })
+    });
+    
+    
+    Router.route('/search',function() {
+        this.render('navbar',{
+            to:"navbar"
+        });
+        this.render('searchPage',{
+            to:"mainPage"
+        });
+    });
+    
+    
+    

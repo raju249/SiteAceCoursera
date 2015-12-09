@@ -26,4 +26,14 @@ Template.navbar.helpers({
             return "";
         }
     }
-})
+});
+
+Template.searchPage.helpers({
+  websitesIndex: () => WebsitesIndex
+});
+
+//Global helpers
+Template.registerHelper('cleanId', function(id) {
+    var cleanId = id.substring(0,17); //same as truncate.
+    return new Spacebars.SafeString(cleanId);
+});

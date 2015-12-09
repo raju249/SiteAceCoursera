@@ -1,5 +1,6 @@
 /* global FlashMessages*/
 /*global Comments*/
+/*global PackageSearch*/
 
 	FlashMessages.configure({
     autoHide: true,
@@ -29,3 +30,7 @@
 Comments.ui.config({
    template: 'bootstrap'
 });
+
+
+
+

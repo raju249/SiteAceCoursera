@@ -22,7 +22,6 @@
 		</div>
 			<div class="jumbotron">
 				{{> website_form}}
-				{{> search_modal}}
 				{{> thank}}
 			<div class="row">
 				<div class="col-md-8">
@@ -33,7 +32,9 @@
 				</div>
 				<div class="col-md-4">
 					<br>
-					<button id="js-search" class="btn btn-info btn-block js-search"><span class="glyphicon glyphicon-search"></span> Search Website</button>
+					<a href="/search"><button id="js-search" class="btn btn-info btn-block js-search">
+						<span class="glyphicon glyphicon-search"></span> 
+						Search Website</button></a>
 				</div>
 			</div>
 			</div>
@@ -120,42 +121,68 @@
 	
 </template>
 <!--Template for search -->
-<template name="search_modal">
-	<div class="modal fade" id="search" tabindex="-1" role="dialog"
-	aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" 
-                	 data-dismiss="modal">
-                       <span aria-hidden="true">&times;</span>
-                       <span class="sr-only">Close</span>
-                	</button>
-                <h4 class="modal-title" id="myModalLabel">
-                   <span class="glyphicon glyphicon-search"></span> Search
-                </h4>
-				</div>
-				<div class="modal-body">
-					<form role="form">
-	                  	<div class="form-group">
-		                    <label for="exampleInputEmail1">Website url</label>
-		                      <input type="email" class="form-control"
-		                      id="Inputurl" required placeholder="http://www.example.com"/>
-	                  	</div>
-                  	</form>
-				</div>
-				<div class="modal-footer">
-	                <button type="button" class="btn btn-default"
-	                        data-dismiss="modal">
-	                            Close
-	                </button>
-	                <button type="button" class="btn btn-success">
-	                    <span class="glyphicon glyphicon-search"></span> Search
-	                </button>
-            	</div>
+<template name="searchPage">
+	<div class="container pad">
+		<div class="jumbotron">
+			<h2>Search A Website.</h2>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<ol class="breadcrumb">
+					  <li><a href="/">Home</a></li>
+					  <li><a href="/sites">Sites</a></li>
+					  <li class="active">Search</li>
+				</ol>
 			</div>
+			<div class="row">
+      <div class="col-xs-1">
+        <span class="glyphicon glyphicon-search pull-right"></span>
+      </div>
+      <div class="col-xs-11">
+        {{> EasySearch.Input index=websitesIndex }}
+      </div>
+	    </div>   
+	    <hr> 
+	    <div class="row">
+	      {{#EasySearch.Each index=websitesIndex }}
+	        {{> searchResult }}
+	      {{/EasySearch.Each}}
+	    </div>
+	    <div class="row">
+	      <div class="col-xs-12">
+	        {{> EasySearch.LoadMore index=websitesIndex }}
+	      </div>
+	      <div class="col-xs-12">
+	        {{#EasySearch.IfNoResults index=websitesIndex}}
+	          <p class="text-danger">No results found!</p>
+	        {{/EasySearch.IfNoResults}}
+      </div>
+    </div>
 		</div>
 	</div>
+</template>
+
+<!-- Site solo template for search section -->
+<template name="searchResult">
+	  <div class="col-xs-12 col-sm-4">
+	    <div class="panel panel-default">
+	      <div class="panel-heading">
+	        <a href="/site/{{cleanId _id}}">{{title}}</a>        
+	      </div>
+	      <div class="panel-body">
+	        <p>{{description}}</p>
+	      </div>
+	    </div>
+	  </div>
+</template>
+<!--Search result -->
+<template name="searchBox">
+    {{> EasySearch.Input index=websitesIndex }}
+    <ul>
+        {{#EasySearch.Each index=websitesIndex }}
+           <li>{{title}}</li>
+        {{/EasySearch.Each}}
+    </ul>
 </template>
 
 <!--Template thet adds websites -->
